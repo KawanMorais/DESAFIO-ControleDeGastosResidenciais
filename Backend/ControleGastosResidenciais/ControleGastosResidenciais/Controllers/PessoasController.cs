@@ -32,7 +32,7 @@ namespace ControleGastosResidenciais.Controllers
             _context.Pessoas.Add(pessoa);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetPessoas), new { id = pessoa.Id }, pessoa);
+            return Ok(pessoa);
         }
 
         [HttpDelete("{id}")]
