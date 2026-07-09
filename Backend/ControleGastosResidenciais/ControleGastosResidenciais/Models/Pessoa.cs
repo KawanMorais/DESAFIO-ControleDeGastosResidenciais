@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ControleGastosResidenciais.Models
 {
@@ -19,6 +20,7 @@ namespace ControleGastosResidenciais.Models
         public int Idade { get; set; }
 
         //Lista para armazenar as transações(receita e despesa) associadas a pessoa.
+        [JsonIgnore]
         public virtual ICollection<Transacao> Transacoes { get; set; } = new List<Transacao>();
     }
 }
